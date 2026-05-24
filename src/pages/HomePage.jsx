@@ -1,5 +1,11 @@
 import AnimatedCounter from '../components/AnimatedCounter';
 import LocationsMapPreview from '../components/LocationsMapPreview';
+import heroImg from '../assets/hero_family_planning.png';
+import familyBalancingImg from '../assets/family_balancing.png';
+import geneticPreventionImg from '../assets/genetic_prevention.png';
+import avatarFamily1 from '../assets/avatar_family1.png';
+import avatarFather1 from '../assets/avatar_father1.png';
+import avatarMother1 from '../assets/avatar_mother1.png';
 
 export default function HomePage({ navigateTo }) {
   return (
@@ -26,7 +32,7 @@ export default function HomePage({ navigateTo }) {
           </div>
           <div className="image-placeholder hero-placeholder reveal-on-scroll">
             <img 
-              src="/src/assets/hero_family_planning.png" 
+              src={heroImg} 
               alt="Soft natural-light photograph of a parent gently holding a baby's hand, representing IVF and family planning" 
               className="premium-hero-img"
             />
@@ -69,7 +75,7 @@ export default function HomePage({ navigateTo }) {
             <div className="card path-card cream reveal-on-scroll delay-100">
               <div className="image-placeholder path-card-image">
                 <img 
-                  src="/src/assets/family_balancing.png" 
+                  src={familyBalancingImg} 
                   alt="Children playing together representing family balancing" 
                   className="premium-img"
                 />
@@ -87,7 +93,7 @@ export default function HomePage({ navigateTo }) {
             <div className="card path-card mist reveal-on-scroll delay-300">
               <div className="image-placeholder path-card-image">
                 <img 
-                  src="/src/assets/genetic_prevention.png" 
+                  src={geneticPreventionImg} 
                   alt="Scientific clinical genetic screening consultation" 
                   className="premium-img"
                 />
@@ -226,7 +232,7 @@ export default function HomePage({ navigateTo }) {
               </p>
               <div className="testimonial-author-wrapper" style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginTop: '1.5rem' }}>
                 <img 
-                  src="/src/assets/avatar_family1.png" 
+                  src={avatarFamily1} 
                   alt="Shelley and Paul F." 
                   className="testimonial-avatar" 
                   style={{ width: '44px', height: '44px', borderRadius: '50%', objectFit: 'cover', border: '1.5px solid rgba(15, 61, 92, 0.1)' }}
@@ -245,7 +251,7 @@ export default function HomePage({ navigateTo }) {
               </p>
               <div className="testimonial-author-wrapper" style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginTop: '1.5rem' }}>
                 <img 
-                  src="/src/assets/avatar_father1.png" 
+                  src={avatarFather1} 
                   alt="Jeff B." 
                   className="testimonial-avatar" 
                   style={{ width: '44px', height: '44px', borderRadius: '50%', objectFit: 'cover', border: '1.5px solid rgba(15, 61, 92, 0.1)' }}
@@ -264,7 +270,7 @@ export default function HomePage({ navigateTo }) {
               </p>
               <div className="testimonial-author-wrapper" style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginTop: '1.5rem' }}>
                 <img 
-                  src="/src/assets/avatar_mother1.png" 
+                  src={avatarMother1} 
                   alt="Elizabeth L." 
                   className="testimonial-avatar" 
                   style={{ width: '44px', height: '44px', borderRadius: '50%', objectFit: 'cover', border: '1.5px solid rgba(15, 61, 92, 0.1)' }}
