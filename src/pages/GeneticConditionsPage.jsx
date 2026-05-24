@@ -1,3 +1,4 @@
+import geneticPreventionImg from '../assets/genetic_prevention.png';
 
 export default function GeneticConditionsPage({ navigateTo }) {
   return (
@@ -18,7 +19,7 @@ export default function GeneticConditionsPage({ navigateTo }) {
             </div>
             <div className="image-placeholder genetic-hero-placeholder reveal-on-scroll delay-200">
               <img 
-                src="/src/assets/genetic_prevention.png" 
+                src={geneticPreventionImg} 
                 alt="Clinical photo representing genetic prevention and consultation" 
                 className="premium-img" 
                 style={{ borderRadius: '12px', boxShadow: 'var(--shadow-lg)' }}

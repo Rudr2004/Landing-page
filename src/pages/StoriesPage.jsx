@@ -1,34 +1,41 @@
+import avatarFamily1 from '../assets/avatar_family1.png';
+import avatarFather1 from '../assets/avatar_father1.png';
+import avatarMother1 from '../assets/avatar_mother1.png';
+import avatarFamily2 from '../assets/avatar_family2.png';
+import avatarCoupleUae from '../assets/avatar_couple_uae.png';
+import avatarFamilyAsian from '../assets/avatar_family_asian.png';
+
 export default function StoriesPage({ navigateTo }) {
   const testimonials = [
     {
       quote: "Our gorgeous little girl. Millions and trillions of thank-yous to the technical team at Puerto Vallarta.",
       author: "Shelley and Paul F. — Mexico",
-      avatar: "/src/assets/avatar_family1.png"
+      avatar: avatarFamily1
     },
     {
       quote: "Everyone was so accommodating and respectful of our medical choices. I appreciate that more than I can say.",
       author: "Jeff B. — Switzerland",
-      avatar: "/src/assets/avatar_father1.png"
+      avatar: avatarFather1
     },
     {
       quote: "Thank you for going above and beyond all normal protocols to coordinate sample shipping with our local clinic.",
       author: "Elizabeth L. — North Cyprus",
-      avatar: "/src/assets/avatar_mother1.png"
+      avatar: avatarMother1
     },
     {
       quote: "Carrying a gene for hemophilia was a heavy burden. MicroSort X-enrichment gave us the peace of mind we needed.",
       author: "Sarah and Marc T. — Germany",
-      avatar: "/src/assets/avatar_family2.png"
+      avatar: avatarFamily2
     },
     {
       quote: "We completed our cycle in Cyprus. The coordination and hospitality made a complex journey feel comfortable.",
       author: "Rania and Khaled S. — UAE",
-      avatar: "/src/assets/avatar_couple_uae.png"
+      avatar: avatarCoupleUae
     },
     {
       quote: "We now have a balanced family with a boy and a girl. We are thankful for the medical staff in Malaysia.",
       author: "Mei-Ling and John W. — Singapore",
-      avatar: "/src/assets/avatar_family_asian.png"
+      avatar: avatarFamilyAsian
     }
   ];
 
