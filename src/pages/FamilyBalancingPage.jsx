@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import familyBalancingImg from '../assets/family_balancing.png';
 
 export default function FamilyBalancingPage({ navigateTo }) {
   const [openFaq, setOpenFaq] = useState(null);
@@ -44,7 +45,7 @@ export default function FamilyBalancingPage({ navigateTo }) {
           </div>
           <div className="image-placeholder family-balancing-hero-placeholder reveal-on-scroll delay-200">
             <img 
-              src="/src/assets/family_balancing.png" 
+              src={familyBalancingImg} 
               alt="Natural light photograph of siblings representing family balancing" 
               className="premium-img" 
               style={{ borderRadius: '12px', boxShadow: 'var(--shadow-lg)' }}
