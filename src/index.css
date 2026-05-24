@@ -137,48 +137,63 @@ a:hover {
   align-items: center;
   justify-content: center;
   font-family: var(--font-body);
-  font-size: 1rem;
-  font-weight: 500;
-  padding: 0.875rem 1.75rem;
-  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.8rem 1.8rem;
+  border-radius: 30px; /* pill rounded profile */
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   border: 1px solid transparent;
   gap: 0.5rem;
+  position: relative;
+  overflow: hidden;
 }
 
 .btn-primary {
   background-color: var(--color-accent);
   color: var(--color-white);
+  box-shadow: 0 4px 14px rgba(201, 123, 91, 0.28);
 }
 
 .btn-primary:hover {
   background-color: var(--color-accent-hover);
-  transform: translateY(-1px);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 20px rgba(201, 123, 91, 0.42);
 }
 
 .btn-secondary {
-  border-color: var(--color-primary);
-  background-color: transparent;
+  border-color: rgba(15, 61, 92, 0.2);
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   color: var(--color-primary);
+  box-shadow: 0 4px 12px rgba(15, 61, 92, 0.02);
 }
 
 .btn-secondary:hover {
   background-color: var(--color-primary);
+  border-color: var(--color-primary);
   color: var(--color-white);
-  transform: translateY(-1px);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 18px rgba(15, 61, 92, 0.18);
 }
 
 .btn-ghost {
-  border-color: var(--color-secondary);
-  background-color: transparent;
+  border-color: rgba(31, 95, 139, 0.2);
+  background-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   color: var(--color-secondary);
 }
 
 .btn-ghost:hover {
   background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
   color: var(--color-white);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 18px rgba(31, 95, 139, 0.15);
 }
+
 
 .btn-text-link {
   display: inline-flex;
@@ -212,16 +227,17 @@ a:hover {
 .global-header {
   position: sticky;
   top: 0;
-  z-index: 100;
-  background-color: var(--color-white);
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  height: 80px;
+  z-index: 1000;
+  background-color: transparent;
+  border-bottom: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  height: 90px;
+  padding: 10px 0;
 }
 
 .global-header.scrolled {
-  border-color: var(--color-border);
-  box-shadow: var(--shadow-sm);
+  border-bottom: none;
+  box-shadow: none;
 }
 
 .header-container {
@@ -229,7 +245,24 @@ a:hover {
   justify-content: space-between;
   align-items: center;
   height: 100%;
+  background: rgba(255, 255, 255, 0.72) !important;
+  backdrop-filter: blur(20px) saturate(120%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(120%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  border-radius: 45px;
+  padding-left: 2.5rem !important;
+  padding-right: 2.5rem !important;
+  box-shadow: 0 8px 30px rgba(15, 61, 92, 0.04);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
+.global-header.scrolled .header-container {
+  background: rgba(255, 255, 255, 0.88) !important;
+  box-shadow: 0 12px 35px rgba(15, 61, 92, 0.08);
+  border-color: rgba(255, 255, 255, 0.8) !important;
+  transform: scale(0.98);
+}
+
 
 .logo-text {
   font-family: var(--font-heading);
@@ -761,13 +794,21 @@ a:hover {
 /* Locations World Map Preview */
 .map-container {
   position: relative;
-  background-color: var(--color-white);
-  border: 1px solid var(--color-border);
-  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.75) !important;
+  backdrop-filter: blur(20px) saturate(130%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(130%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.6) !important;
+  border-radius: 16px;
   padding: 3rem;
-  box-shadow: var(--shadow-sm);
-  margin: 3rem 0;
+  box-shadow: 0 15px 40px rgba(15, 61, 92, 0.05) !important;
+  margin: 3.5rem auto;
   overflow: hidden;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
+}
+
+.map-container:hover {
+  border-color: rgba(201, 123, 91, 0.3) !important;
+  box-shadow: 0 25px 50px rgba(15, 61, 92, 0.1), 0 0 15px rgba(201, 123, 91, 0.04) !important;
 }
 
 .world-map-svg {
@@ -2405,3 +2446,552 @@ a:hover {
     align-items: flex-start;
   }
 }
+
+/* ==========================================================================
+   MODERN IVF PREMIUM ANIMATIONS SYSTEM
+   ========================================================================== */
+
+/* Page Fade-In Transition */
+.page-fade-in {
+  animation: pageFadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes pageFadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scroll Reveal Base Classes */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.reveal-on-scroll.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animation Delays for Grid Elements */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-500 { transition-delay: 500ms; }
+
+/* Floating Organic Blobs (Cellular Flow) in Hero Background */
+.hero-section {
+  overflow: hidden; /* Prevent horizontal scrolling from blobs */
+}
+
+.organic-blobs-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.organic-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.blob-1 {
+  top: -10%;
+  right: -5%;
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(201, 123, 91, 0.32) 0%, rgba(244, 249, 252, 0) 70%);
+  animation: floatAroundOne 22s infinite alternate ease-in-out;
+}
+
+.blob-2 {
+  bottom: -15%;
+  left: -5%;
+  width: 650px;
+  height: 650px;
+  background: radial-gradient(circle, rgba(31, 150, 180, 0.28) 0%, rgba(251, 247, 242, 0) 70%);
+  animation: floatAroundTwo 26s infinite alternate ease-in-out;
+}
+
+.blob-3 {
+  top: 30%;
+  left: 35%;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(165, 120, 215, 0.28) 0%, rgba(250, 250, 250, 0) 70%); /* soft lavender fertility glow */
+  animation: floatAroundThree 18s infinite alternate ease-in-out;
+}
+
+@keyframes floatAroundOne {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translate(-60px, 80px) scale(1.15) rotate(120deg);
+  }
+  100% {
+    transform: translate(40px, -40px) scale(0.9) rotate(360deg);
+  }
+}
+
+@keyframes floatAroundTwo {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translate(80px, -90px) scale(0.85) rotate(-180deg);
+  }
+  100% {
+    transform: translate(-40px, 40px) scale(1.1) rotate(-360deg);
+  }
+}
+
+@keyframes floatAroundThree {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-50px, -50px) scale(1.2);
+  }
+  100% {
+    transform: translate(50px, 50px) scale(0.95);
+  }
+}
+
+/* Pulsing Map Pins */
+.map-marker {
+  cursor: pointer;
+}
+
+/* Styled Map Continents */
+.world-map-continents path {
+  fill: rgba(220, 235, 241, 0.7);
+  stroke: rgba(15, 61, 92, 0.12);
+  stroke-width: 1.5px;
+  stroke-linejoin: round;
+  transition: fill 0.3s cubic-bezier(0.16, 1, 0.3, 1), stroke 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.world-map-continents path:hover {
+  fill: rgba(200, 222, 235, 0.95);
+  stroke: rgba(15, 61, 92, 0.3);
+}
+
+.map-marker .marker-core {
+  fill: var(--color-accent);
+  stroke: var(--color-white);
+  stroke-width: 2px;
+  transition: fill 0.3s cubic-bezier(0.16, 1, 0.3, 1), r 0.3s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.map-marker:hover .marker-core {
+  fill: var(--color-primary);
+  r: 10px;
+  stroke-width: 3px;
+  filter: drop-shadow(0 0 6px rgba(15, 61, 92, 0.3));
+}
+
+.map-marker .marker-ripple {
+  fill: var(--color-accent);
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  pointer-events: none;
+}
+
+.map-marker .ripple-1 {
+  animation: mapPinRipple 2.6s infinite ease-out;
+}
+
+.map-marker .ripple-2 {
+  animation: mapPinRipple 2.6s infinite ease-out;
+  animation-delay: 1.3s;
+}
+
+.map-marker:hover .marker-ripple {
+  fill: var(--color-primary);
+}
+
+@keyframes mapPinRipple {
+  0% {
+    r: 6px;
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    r: 32px;
+    opacity: 0;
+  }
+}
+
+/* Navigation Link Slide Underlines */
+.nav-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-primary);
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), left 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Button Micro-interactions */
+.btn {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+              background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+              color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(15, 61, 92, 0.1);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-arrow {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+/* Cards Hover Elevate & Glassmorphism Transition System */
+.card,
+.path-card,
+.testimonial-card,
+.qualifying-card,
+.eligibility-info-card,
+.timeline-card,
+.procedure-card,
+.evidence-display-card,
+.location-card,
+.featured-story-card,
+.verify-card,
+.contact-form-card,
+.contact-info-card,
+.contact-links-card {
+  background: rgba(255, 255, 255, 0.65) !important;
+  backdrop-filter: blur(18px) saturate(125%) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(125%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.55) !important;
+  box-shadow: 0 8px 32px 0 rgba(15, 61, 92, 0.04) !important;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glass hover elevation and background brightening */
+.card:hover,
+.path-card:hover,
+.testimonial-card:hover,
+.qualifying-card:hover,
+.eligibility-info-card:hover,
+.timeline-card:hover,
+.procedure-card:hover,
+.evidence-display-card:hover,
+.location-card:hover,
+.featured-story-card:hover,
+.verify-card:hover,
+.contact-form-card:hover,
+.contact-info-card:hover,
+.contact-links-card:hover {
+  transform: translateY(-6px) !important;
+  background: rgba(255, 255, 255, 0.8) !important;
+  border-color: rgba(31, 95, 139, 0.22) !important;
+  box-shadow: 0 20px 40px rgba(15, 61, 92, 0.08) !important;
+}
+
+/* Glassmorphism Tint Overrides for Cream / Mist Card Variants */
+.path-card.cream, .qualifying-card.family-balancing {
+  background: rgba(251, 247, 242, 0.62) !important;
+  border-color: rgba(234, 227, 214, 0.6) !important;
+}
+.path-card.cream:hover, .qualifying-card.family-balancing:hover {
+  background: rgba(251, 247, 242, 0.82) !important;
+}
+
+.path-card.mist, .qualifying-card.genetic {
+  background: rgba(244, 249, 252, 0.62) !important;
+  border-color: rgba(209, 228, 239, 0.6) !important;
+}
+.path-card.mist:hover, .qualifying-card.genetic:hover {
+  background: rgba(244, 249, 252, 0.82) !important;
+}
+
+/* Sub-card image placeholder transparency coordination */
+.image-placeholder, .path-card-image, .location-img-placeholder {
+  background: linear-gradient(135deg, rgba(251, 247, 242, 0.5) 0%, rgba(216, 235, 243, 0.5) 100%) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+}
+
+/* Interactive Timeline animations */
+.timeline-step-row {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.timeline-step-row.in-view {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Staggering process steps container */
+.process-step {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.process-step:hover {
+  transform: translateY(-5px);
+}
+.process-step:hover .process-num {
+  transform: scale(1.1);
+  background-color: var(--color-primary);
+}
+.process-num {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Make Fixed Global Background blobs cover the full viewport */
+.organic-blobs-container {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1 !important; /* Under the entire page flow */
+}
+
+/* Staggered mount animations for Hero content */
+.hero-content > * {
+  opacity: 0;
+  animation: pageFadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.hero-content .section-eyebrow { animation-delay: 100ms; }
+.hero-content .hero-title { animation-delay: 220ms; }
+.hero-content .hero-subhead { animation-delay: 340ms; }
+.hero-content .hero-ctas { animation-delay: 460ms; }
+.hero-placeholder {
+  opacity: 0;
+  animation: pageFadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: 580ms;
+}
+
+/* Translucent Section Backdrops to let background blobs shine through */
+body {
+  background-color: #f7f9fb;
+}
+
+.hero-section {
+  background: linear-gradient(135deg, rgba(251, 247, 242, 0.4) 0%, rgba(232, 244, 248, 0.4) 100%) !important;
+}
+
+.trust-strip {
+  background-color: rgba(244, 249, 252, 0.45) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+section.section-padding:nth-of-type(even):not(.results-band):not(.cta-band),
+section[style*="background-color: var(--color-offwhite)"]:not(.results-band):not(.cta-band) {
+  background-color: rgba(250, 250, 250, 0.45) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+section.section-padding:nth-of-type(odd):not(.results-band):not(.cta-band),
+section[style*="background-color: var(--color-white)"]:not(.results-band):not(.cta-band) {
+  background-color: rgba(255, 255, 255, 0.45) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Glassmorphism overrides for colored bands */
+.results-band {
+  background-color: rgba(15, 61, 92, 0.85) !important; /* translucent primary #0F3D5C */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.cta-band {
+  background-color: rgba(251, 247, 242, 0.75) !important; /* translucent cream #FBF7F2 */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+
+/* Glassmorphism Card Hover Shimmer Glare Effect */
+.card::before,
+.path-card::before,
+.testimonial-card::before,
+.qualifying-card::before,
+.location-card::before,
+.evidence-display-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.25) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+  transition: none;
+  pointer-events: none;
+}
+
+.card:hover::before,
+.path-card:hover::before,
+.testimonial-card:hover::before,
+.qualifying-card:hover::before,
+.location-card:hover::before,
+.evidence-display-card:hover::before {
+  left: 150%;
+  transition: left 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Premium Image & Visual Components Integration */
+.premium-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.premium-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(15, 61, 92, 0.15);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-placeholder,
+.family-balancing-hero-placeholder,
+.genetic-hero-placeholder {
+  padding: 0 !important;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.path-card-image {
+  padding: 0 !important;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.path-card:hover .premium-img,
+.hero-placeholder:hover .premium-hero-img {
+  transform: scale(1.05);
+}
+
+/* Styled Laboratory Location Indicators */
+.location-img-wrapper {
+  height: 180px;
+  background: linear-gradient(135deg, rgba(244, 249, 252, 0.8) 0%, rgba(209, 228, 239, 0.8) 100%);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.location-img-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.6) 0%, rgba(15, 61, 92, 0.05) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.location-badge-circle {
+  width: 64px;
+  height: 64px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  box-shadow: 0 8px 24px rgba(15, 61, 92, 0.08);
+  letter-spacing: 1px;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.location-card:hover .location-badge-circle {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 12px 32px rgba(15, 61, 92, 0.15);
+}
+
+
+
